@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>form属性示例</title>
+    <meta charset="UTF-8">
+    <style>
+        p {
+            font-size: 27px;
+            font-weight: bold;
+        }
+        
+        #liu {
+            width: 358px;
+        }
+        
+        #jia {
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        span {
+            color: red;
+        }
+        
+        #a {
+            color: red;
+        }
+        
+        #aa {
+            height: 20px;
+            width: 340px;
+        }
+        
+        #bb {
+            height: 20px;
+            width: 340px;
+        }
+        
+        #cc {
+            height: 20px;
+            width: 340px;
+        }
+        
+        #dd {
+            height: 20px;
+            width: 340px;
+        }
+        
+        #ee {
+            height: 25px;
+            width: 344px;
+        }
+        
+        #ff {
+            height: 20px;
+            width: 340px;
+        }
+        
+        #gg {
+            height: 20px;
+            width: 340px;
+        }
+        
+        #b {
+            width: 340px;
+            height: 25px;
+            color: DimGray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>学生信息</p>
+    <fieldset id="liu">
+        <legend id="a">学生档案</legend>
+        <form id="testform" method="get" action="#S">
+            <p id="jia">姓名：</p>
+            <input type="text" name="text1" placeholder="请输入姓名" id="aa" autocomplete="on" required/><span>&nbsp;*</span><br/>
+            <p id="jia">学号：</p>
+            <input type="number" name="number1" placeholder="请输入学号" id="bb" required/><span>&nbsp;*</span><br/>
+            <p id="jia">手机号码： </p>
+            <input type="tel" name="tel1" placeholder="请输入手机号" id="cc" required/><span>&nbsp;*</span><br/>
+            <p id="jia">邮箱地址：</p>
+            <input type="email" name="email1" placeholder="请输入邮箱地址" id="dd" required/><span>&nbsp;*</span><br/>
+            <p id="jia">录取学校：</p>
+            <input type="search" name="search1" list="x" id="ee" />
+            <datalist id="x">
+                <option></option>
+            </datalist><br/>
+            <p id="jia">入学成绩：</p>
+            <input type="number" name="number2" id="ff" /><br/>
+            <p id="jia">入学时间：</p>
+            <input type="date" name="date1" id="gg" /><br/>
+            <br/>
+            <input type="submit" id="b" value="提交" />
+        </form>
+    </fieldset>
+</body>
+
+</html>
