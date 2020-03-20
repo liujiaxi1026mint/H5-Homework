@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>网页换肤</title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        #liu {
+            width: 800px;
+            height: 230px;
+        }
+        
+        #a {
+            font-size: 35px;
+            font-weight: 500;
+            color: red;
+        }
+        
+        #skin {
+            margin: 20px;
+            padding: 5px;
+            width: 900px;
+            height: 32px;
+            padding-right: 0px;
+            list-style: none;
+            border: 1px solid #cccccc;
+        }
+        
+        li {
+            float: left;
+            margin-right: 12px;
+            margin-top: 6px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        #skin_0 {
+            background: #999999;
+        }
+        
+        #skin_1 {
+            background: #BB3BD9;
+        }
+        
+        #skin_2 {
+            background: #FFB6C1;
+        }
+        
+        #skin_3 {
+            background: #08BECE;
+        }
+        
+        #skin_4 {
+            background: #FFFF37;
+        }
+        
+        #skin_5 {
+            background: #AFD400;
+        }
+        
+        .selected {
+            margin-top: 0;
+        }
+        
+        .div1 {
+            background: #999999;
+            margin-left: 80px;
+            width: 800px;
+            height: 70px;
+            float: left;
+        }
+        
+        #xi {
+            font-size: 21px;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset id="liu">
+        <legend id="a"> 网页换肤</legend>
+        <ul id="skin">
+            <li id="skin_0" class="selected" title="灰色"></li>
+            <li id="skin_1" title="紫色"></li>
+            <li id="skin_2" title="粉色"></li>
+            <li id="skin_3" title="天蓝色"></li>
+            <li id="skin_4" title="黄色"></li>
+            <li id="skin_5" title="淡绿色"></li>
+        </ul>
+        <div class="div1">
+            <p id="xi">LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。</p>
+        </div>
+    </fieldset>
+    <script type="text/javascript">
+        var skinList = document.getElementsByTagName("li");
+        var div1 = document.getElementsByClassName("div1")[0];
+        var number = localStorage.getItem("key");
+        for (var i = 0; i < skinList.length; i++) {
+            if (i == number) {
+                skinList[0].removeAttribute("class");
+                skinList[i].style.marginTop = 0;
+                div1.setAttribute("id", "skin_" + i);
+            }
+        }
+        for (var i = 0; i < skinList.length; i++) {
+            skinList[i].index = i;
+            skinList[i].onclick = function() {
+                for (var j = 0; j < skinList.length; j++) {
+                    skinList[j].style.marginTop = 6 + "px";
+                }
+                this.style.marginTop = 0;
+                var str = this.getAttribute("id");
+                div1.setAttribute("id", str);
+                localStorage.setItem("key", this.index);
+            }
+        }
+    </script>
+</body>
+<html>
